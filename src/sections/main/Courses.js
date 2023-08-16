@@ -1,0 +1,86 @@
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import Hashtags from "@/components/Hashtags";
+import AutoplayCarousel from "@/components/InfiniteCarusel";
+import { Container, Row, Col } from "react-bootstrap";
+
+const Courses = () => {
+  return (
+    <div className='background'>
+      <Container className='text-center'>
+        <div className='h-2 m-t-160 m-b-40'>IT Courses</div>
+        <Row>
+          <Col md='8'>
+            <Row>
+              <Col md='6' sm='12'>
+                <Card classes='background-light-blue-50 p-t-66 p-b-66'>
+                  <div className='h-2'>
+                    250<span className='blue'>+</span>
+                  </div>
+                  <div className='pr-1'>Education Centers</div>
+                </Card>
+              </Col>
+              <Col md='6' sm='12'>
+                <Card classes='background-light-blue-50 p-t-66 p-b-66'>
+                  <div className='h-2'>
+                    140,000<span className='blue'>+</span>
+                  </div>
+                  <div className='pr-1'>Students</div>
+                </Card>
+              </Col>
+            </Row>
+            <br />
+            <Card classes='background-light-blue-50'>
+              <Row>
+                <Col
+                  md='6'
+                  sm='12'
+                  className='d-flex gap-2 flex-wrap p-t-25 p-l-25 p-b-25'
+                >
+                  <Hashtags>Backend</Hashtags>
+                  <Hashtags>Designer</Hashtags>
+                  <Hashtags>3D artist</Hashtags>
+                  <Hashtags>Project manager</Hashtags>
+                  <Hashtags>Frontend</Hashtags>
+                  <Hashtags>Marketing</Hashtags>
+                  <Hashtags>Data engineer</Hashtags>
+                  <Hashtags>DevOps</Hashtags>
+                  <Hashtags>System admin</Hashtags>
+                  <Hashtags>HR</Hashtags>
+                </Col>
+                <Col md='6' sm='12'>
+                  <div className='p-t-66 p-b-66'>
+                    <div className='h-2'>
+                      4,000,000<span className='blue'>+</span>
+                    </div>
+                    <div className='pr-1'>Average salary</div>
+                  </div>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+          <Col md='4'>
+            <Card classes='background-light-blue-50 p-t-32 p-b-32'>
+              <div>
+                <AutoplayCarousel classes='carousel-track-right' />
+                <br />
+                <AutoplayCarousel classes='carousel-track-left' />
+                <br />
+                <AutoplayCarousel classes='carousel-track-right' />
+                <br />
+                <AutoplayCarousel classes='carousel-track-left' />
+              </div>
+              <div className='h-2 m-t-40'>
+                4,000,000<span className='blue'>+</span>
+              </div>
+              <div className='pr-1'>Average salary</div>
+            </Card>
+          </Col>
+        </Row>
+        <Button classes='m-t-40'>View courses</Button>
+      </Container>
+    </div>
+  );
+};
+
+export default Courses;

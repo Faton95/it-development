@@ -1,11 +1,9 @@
 "use client";
-import Header from "@/sections/main/Header";
-import Stories from "@/sections/main/Stories";
 import Layout from "@/components/Layout";
+import { Container, Row, Col } from "react-bootstrap";
+import SentersCardList from "@/components/SentersCard";
+import Filter from "@/components/Filter";
 import UsefulLinks from "@/sections/shared/UsefulLinks";
-import Partners from "@/sections/main/Partners";
-import Universities from "@/sections/main/Universities";
-import Courses from "@/sections/main/Courses";
 
 const data = [
   {
@@ -34,15 +32,20 @@ const data = [
   },
 ];
 
-export default function Home() {
+export default function Senters() {
   return (
     <Layout>
-      <Header />
-      <Stories />
-      <Courses />
-      <UsefulLinks data={data} />
-      <Universities />
-      <Partners />
+      <Container className='m-t-50'>
+        <Row>
+          <Col md='3'>
+            <Filter />
+          </Col>
+          <Col md='9'>
+            <SentersCardList />
+          </Col>
+        </Row>
+        <UsefulLinks data={data} />
+      </Container>
     </Layout>
   );
 }

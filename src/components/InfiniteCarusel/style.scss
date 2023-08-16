@@ -1,0 +1,74 @@
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    border-color: #4b5563;
+    width: 100%;
+  }
+  
+  .carousel-card {
+    padding: 6.5px;
+    &:hover {
+      transform: scale(0.9);
+    }
+    
+    border-radius: 9px;
+    border: 0.563px solid var(--neutral-colors-300, #EBEFF6);
+    background: var(--neutral-colors-white, #FFF);
+  }
+  
+  .carousel-card > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10%;
+  }
+  
+  .carousel-track-left {
+    display: flex;
+    position: relative;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    gap: 16px;
+    width: 200%;
+    height: 100%;
+    animation: slideLeft 20s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  .carousel-track-right {
+    display: flex;
+    position: relative;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    gap: 16px;
+    width: 200%;
+    height: 100%;
+    animation: slideRight 20s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+  }
+
+  @keyframes slideRight {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
