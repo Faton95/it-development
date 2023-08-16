@@ -21,7 +21,7 @@ const Index = () => {
       </Navbar>
       <Navbar expand='lg' className='bg-body-tertiary'>
         <Container>
-          <Navbar.Brand href='#home'>
+          <Navbar.Brand href='/'>
             <Image
               priority
               src={Logo}

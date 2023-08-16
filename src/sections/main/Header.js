@@ -18,7 +18,7 @@ const Header = () => {
           <span className='blue'>Cyber Security</span>
         </div>
         <div className='pr-3 black m-b-40'>Powered by ITPARK</div>
-        <Carusel />
+        {/* <Carusel /> */}
         <Card classes='m-t-160 m-b-160 p-t-56 p-b-56 background-light-blue-50'>
           <div className='h-2 black'>Don&apos;t you know your interest?</div>
           <div className='pr-1 black m-t-16 m-b-32'>

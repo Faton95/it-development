@@ -2,7 +2,7 @@ import CardLayout from "@/components/Card";
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Hashtags from "@/components/Hashtags";
-import Button from "@/components/Button";
+import RoundedButton from "@/components/Button/RoundedButton";
 import Image from "next/image";
 
 const Stories = () => {
@@ -59,33 +59,39 @@ const Stories = () => {
             </Card>
           </Col>
         </Row>
-        <Row>
-          <Col md='8' sm='12'>
+        <Row className='m-t-25 p-b-16'>
+          <Col md='8' sm='12' className='text-start'>
             <div className='pr-3'>Powered by ITPARK</div>
           </Col>
-          <Col md='4' sm='12'>
+          <Col
+            md='4'
+            sm='12'
+            className='d-flex justify-content-between align-items-center'
+          >
             <Image
               src='/images/dots.png'
               alt='arrow-left'
-              height={4}
+              height={8}
               width={64}
             />
-            <Button classes='rounded'>
-              <Image
-                src='/icons/Arrow-Left.svg'
-                alt='arrow-left'
-                height={24}
-                width={24}
-              />
-            </Button>
-            <Button classes='rounded'>
-              <Image
-                src='/icons/Arrow-Right.svg'
-                alt='arrow-left'
-                height={24}
-                width={24}
-              />
-            </Button>
+            <div className='d-flex gap-3'>
+              <RoundedButton>
+                <Image
+                  src='/icons/Arrow-Left.svg'
+                  alt='arrow-left'
+                  height={24}
+                  width={24}
+                />
+              </RoundedButton>
+              <RoundedButton>
+                <Image
+                  src='/icons/Arrow-Right.svg'
+                  alt='arrow-left'
+                  height={24}
+                  width={24}
+                />
+              </RoundedButton>
+            </div>
           </Col>
         </Row>
       </Container>

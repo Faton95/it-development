@@ -43,7 +43,7 @@ const Universities = () => {
                   <Card.Title className='text-start pr-1'>
                     {item.name}
                   </Card.Title>
-                  <Card.Title className='text-start pr-3'>
+                  <Card.Title className='text-start pr-3 d-flex align-items-center gap-1'>
                     <Image
                       src='/icons/Location.svg'
                       alt='Location'
@@ -52,7 +52,7 @@ const Universities = () => {
                     />
                     {item.address}
                   </Card.Title>
-                  <Card.Text className='text-start pr-3'>
+                  <Card.Text className='text-start pr-3 d-flex align-items-center gap-1'>
                     <Image
                       src='/icons/Wallet.svg'
                       alt='Location'
@@ -61,9 +61,12 @@ const Universities = () => {
                     />
                     From {item.price}
                   </Card.Text>
-                  <Card.Text className='text-start'>
+                  <Card.Text className='text-start d-flex gap-2'>
                     {item.faculties.map((item) => (
-                      <Hashtags classes='pr-5' key='item'>
+                      <Hashtags
+                        classes='pr-5 background-light-blue-50'
+                        key='item'
+                      >
                         {item}
                       </Hashtags>
                     ))}

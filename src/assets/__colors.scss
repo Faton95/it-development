@@ -3,6 +3,7 @@ $light-blue: #E3EEFF;
 $light-blue-50: #F0F3FF;
 $blue: #2675EB;
 $dark-blue: #06306D;
+$grey: #B7B7B7;
 
 // Base/Black
 $black: #222222;
@@ -16,6 +17,11 @@ $white: #FFFFFF;
 
 .blue {
     color: $blue;
+}
+
+.grey {
+    color: $grey;
+    font-weight: 600;
 }
 
 .background-light-blue {

@@ -32,7 +32,15 @@ const CourseCardItem = ({ data }) => {
           ))}
         </div>
         <div className='pr-4 senters-description'>{description}</div>
-        <div className='pr-3 m-t-16 m-b-12'>{address}</div>
+        <div className='pr-3 m-t-16 m-b-12 d-flex align-items-center gap-1'>
+          <Image
+            src='/icons/Location.svg'
+            alt='white-logo'
+            height={20}
+            width={20}
+          />
+          <div>{address}</div>
+        </div>
         <div className='d-flex gap-3 m-b-10'>
           <div className='d-flex align-items-center gap-1'>
             <Image

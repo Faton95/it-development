@@ -25,7 +25,7 @@ const CourseCardItem = ({ data }) => {
         <div className='pr-4'>| {schoolName}</div>
         <div className='h-7 m-b-12 m-t-12'>{courseName}</div>
         <div className='d-flex align-items-center gap-2 m-b-12'>
-          <Image src='/icons/wallet.svg' alt='wallet' height={20} width={20} />
+          <Image src='/icons/Wallet.svg' alt='wallet' height={20} width={20} />
           <div className='pr-2 blue'>{price}</div>
         </div>
         <div className='d-flex gap-3 m-b-12'>
