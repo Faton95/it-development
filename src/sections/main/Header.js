@@ -1,12 +1,13 @@
-import Button from "@/components/Button";
-import Card from "@/components/Card";
 import Carusel from "@/components/Carusel";
 import React from "react";
 import { Container } from "react-bootstrap";
+import InfoCard from "../shared/InfoCard";
 
-const style = {
-  width: 297,
-  height: 296,
+const infoData = {
+  title: "Don't you know your interest?",
+  description:
+    "Take this career test to pick IT specialization which fits your personality",
+  buttonText: "Career test",
 };
 
 const Header = () => {
@@ -19,14 +20,7 @@ const Header = () => {
         </div>
         <div className='pr-3 black m-b-40'>Powered by ITPARK</div>
         {/* <Carusel /> */}
-        <Card classes='m-t-160 m-b-160 p-t-56 p-b-56 background-light-blue-50'>
-          <div className='h-2 black'>Don&apos;t you know your interest?</div>
-          <div className='pr-1 black m-t-16 m-b-32'>
-            Take this career test to pick IT specialization <br /> which fits
-            your personality
-          </div>
-          <Button classes=''>Career test</Button>
-        </Card>
+        <InfoCard data={infoData} />
       </Container>
     </div>
   );

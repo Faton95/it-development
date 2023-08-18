@@ -36,9 +36,9 @@ const Index = () => {
               <Nav.Link href='/courses'>Courses</Nav.Link>
               <Nav.Link href='/centers'>IT centres</Nav.Link>
               <Nav.Link href='/programs'>Programs</Nav.Link>
-              <Nav.Link href='#link'>About us</Nav.Link>
-              <Nav.Link href='#home'>Contact us</Nav.Link>
-              <Nav.Link href='#link'>FAQ</Nav.Link>
+              <Nav.Link href='/about-us'>About us</Nav.Link>
+              <Nav.Link href='/contact-us'>Contact us</Nav.Link>
+              <Nav.Link href='/faq'>FAQ</Nav.Link>
             </Nav>
             <Nav>
               <Form.Select aria-label='Default select example'>
