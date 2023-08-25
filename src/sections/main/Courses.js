@@ -4,6 +4,33 @@ import Hashtags from "@/components/Hashtags";
 import AutoplayCarousel from "@/components/InfiniteCarusel";
 import { Container, Row, Col } from "react-bootstrap";
 
+const courses = {
+  0: {
+    imgUrl: "/icons/logos/AWS.svg",
+    title: "1",
+  },
+  1: {
+    imgUrl: "/icons/logos/Behance.svg",
+    title: "1",
+  },
+  2: {
+    imgUrl: "/icons/logos/ClickUp.svg",
+    title: "1",
+  },
+  3: {
+    imgUrl: "/icons/logos/CodePen.svg",
+    title: "1",
+  },
+  4: {
+    imgUrl: "/icons/logos/Dribbble.svg",
+    title: "1",
+  },
+  5: {
+    imgUrl: "/icons/logos/Webflow.svg",
+    title: "1",
+  },
+};
+
 const Courses = () => {
   return (
     <div className='background'>
@@ -62,13 +89,25 @@ const Courses = () => {
           <Col md='4'>
             <Card classes='background-light-blue-50 p-t-32 p-b-32'>
               <div>
-                <AutoplayCarousel classes='carousel-track-right' />
+                <AutoplayCarousel
+                  list={courses}
+                  classes='carousel-track-right'
+                />
                 <br />
-                <AutoplayCarousel classes='carousel-track-left' />
+                <AutoplayCarousel
+                  list={courses}
+                  classes='carousel-track-left'
+                />
                 <br />
-                <AutoplayCarousel classes='carousel-track-right' />
+                <AutoplayCarousel
+                  list={courses}
+                  classes='carousel-track-right'
+                />
                 <br />
-                <AutoplayCarousel classes='carousel-track-left' />
+                <AutoplayCarousel
+                  list={courses}
+                  classes='carousel-track-left'
+                />
               </div>
               <div className='h-2 m-t-40'>
                 4,000,000<span className='blue'>+</span>

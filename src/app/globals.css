@@ -24,3 +24,27 @@
 Link {
     text-decoration: none;
 }
+
+.underLine {
+    border-bottom: 4px solid white;
+    padding: 10px 0 4px 0;
+}
+
+.navbar{ 
+    padding: 0;
+}
+
+.active-link {
+    color: #2675EB;
+    border-bottom: 1px solid #2675EB;
+}
+
+.outline-card{
+    border-radius: 12px;
+    border: 1px solid var(--gray-100, #E0E0E0);
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 28px 0;
+}
