@@ -1,72 +1,51 @@
-import { useState } from "react";
-import Carousel from "react-simply-carousel";
+import React from "react";
+import {
+  StackedCarousel,
+  ResponsiveContainer,
+} from "react-stacked-center-carousel";
+import "./style.css";
+import { Slide } from "./CaruselItem";
 
-const list = [
-  "img1.jpg",
-  "img2.jpg",
-  "img3.jpg",
-  "img4.jpg",
-  "img3.jpg",
-  "img1.jpg",
-  "img2.jpg",
-  "img3.jpg",
-  "img4.jpg",
-  "img3.jpg",
+const data = [
+  {
+    image: "img1.jpg",
+  },
+  {
+    image: "img2.jpg",
+  },
+  {
+    image: "img3.jpg",
+  },
+  {
+    image: "img4.jpg",
+  },
+  {
+    image: "img1.jpg",
+  },
 ];
-function Carusel() {
-  const [activeSlide, setActiveSlide] = useState(0);
 
+const Carusel = () => {
+  const ref = React.useRef(StackedCarousel);
   return (
-    <div>
-      <Carousel
-        containerProps={{
-          style: {
-            width: "100%",
-            justifyContent: "space-between",
-          },
-        }}
-        preventScrollOnSwipe
-        swipeTreshold={60}
-        activeSlideIndex={activeSlide}
-        updateOnItemClick
-        autoplay={true}
-        activeSlideProps={{
-          style: {
-            background: "blue",
-            height: 300,
-            width: 300,
-          },
-        }}
-        onRequestChange={setActiveSlide}
-        forwardBtnProps={{
-          show: false,
-        }}
-        backwardBtnProps={{
-          show: false,
-        }}
-        itemsToShow={5}
-        speed={4000}
-        centerMode
-      >
-        {Array.from({ length: 10 }).map((item, index) => (
-          <div
-            style={{
-              background: "yellow",
-              width: 200,
-              height: 200,
-              border: "30px solid white",
-              textAlign: "center",
-              lineHeight: "240px",
-              boxSizing: "border-box",
-            }}
-            key={index}
-          >
-            {index}
-          </div>
-        ))}
-      </Carousel>
-    </div>
+    <ResponsiveContainer
+      carouselRef={ref}
+      render={(width, carouselRef) => {
+        return (
+          <StackedCarousel
+            ref={carouselRef}
+            slideComponent={Slide}
+            slideWidth={240}
+            carouselWidth={width}
+            data={data}
+            maxVisibleSlide={5}
+            disableSwipe
+            customScales={[1, 0.85, 0.7, 0.55]}
+            transitionTime={450}
+          />
+        );
+      }}
+    />
   );
-}
+};
 
 export default Carusel;

@@ -48,3 +48,7 @@ Link {
     text-align: center;
     padding: 28px 0;
 }
+
+.slider {
+    gap: 100px;
+}

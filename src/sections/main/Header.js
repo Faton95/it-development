@@ -19,7 +19,7 @@ const Header = () => {
           <span className='blue'>Cyber Security</span>
         </div>
         <div className='pr-3 black m-b-40'>Powered by ITPARK</div>
-        {/* <Carusel /> */}
+        <Carusel />
         <InfoCard data={infoData} />
       </Container>
     </div>
