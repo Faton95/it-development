@@ -1,0 +1,62 @@
+{
+    "infoCard": {
+        "title": "Don't you know your interest?",
+        "body": "Take this career test to pick IT specialization which fits your personality",
+        "button": "Career test"
+    },
+    "successfulStories": "Successful stories",
+    "itCourses": {
+        "itCoursesTitle": "IT Courses",
+        "educationCenters": "Education Centers",
+        "students": "Students",
+        "itCoursesGratuates": "IT courses gratuates",
+        "Courses": "Courses",
+        "viewCourses": "View courses"
+    },
+    "usefulLinks": {
+        "usefulLinksTitle": "Useful Links",
+        "usefulLinksData": [
+            {
+                "title": "OMUC",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Ticket"
+              },
+              {
+                "title": "Compensation for IT learning",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Graduated"
+              },
+              {
+                "title": "IT-Skills",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "ShieldDone"
+              },
+              {
+                "title": "IT-Bilim",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Brain"
+              },
+              {
+                "title": "OMUC",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Ticket"
+              },
+              {
+                "title": "Compensation for IT learning",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Graduated"
+              }
+        ]
+    },
+    "itUniversities": {
+        "itUniversitiesTitle": "IT Universities",
+        "allUniversities": "Show all universities"
+    }, 
+    "ourPartners": "Our Partners"
+}

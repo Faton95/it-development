@@ -1,0 +1,20 @@
+.videoBackground {
+    position: relative;
+    background-image: url('/images/macbook1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 0;
+    padding-top: 50%;
+}
+
+.innerVideo {
+    position: absolute;
+    top: 2.4%;
+    left: 16.9%;
+    width: 66.1%;
+    height: 86.5%;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+}

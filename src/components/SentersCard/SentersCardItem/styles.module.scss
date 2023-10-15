@@ -1,0 +1,38 @@
+.sentersCard {
+    border-radius: 8px;
+    border: 1px solid var(--gray-100, #E0E0E0);
+    background: var(--white, #FFF);
+    width: 100%;
+    transition: border 0.6s ease;
+    padding: 16px 4px 4px 4px;
+    cursor: pointer;
+
+    overflow: hidden;
+    &:hover {
+        border: 1px solid #2675EB;
+        box-shadow: 0px 8px 12px 0px rgba(38, 117, 235, 0.25);
+        
+    }
+
+    
+}
+
+.sentersDescription {
+    width: 90%;
+}
+.imageContainer {    
+    > div {
+      position: unset !important;
+    }
+
+  
+    .image {
+        min-width: 224px;
+        object-fit: contain;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
+        transition: transform 0.5s !important;
+    }
+
+  }

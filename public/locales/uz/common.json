@@ -1,0 +1,62 @@
+{
+    "infoCard": {
+        "title": "Nimaga qiziqishingizni bilmaysizmi?",
+        "body": "Sizga mos keladigan IT yo'nalishni aniqlash uchun test topshiring",
+        "button": "Test topshirish"
+    },
+    "successfulStories": "Muvaffaqiyat hikoyalari",
+    "itCourses": {
+        "itCoursesTitle": "IT kurslar",
+        "educationCenters": "O‘quv markazlar",
+        "students": "Studentlar",
+        "itCoursesGratuates": "IT kurs bitiruvchilari",
+        "Courses": "Kurslar",
+        "viewCourses": "Kurslarni ko‘rish"
+    },
+    "usefulLinks": {
+        "usefulLinksTitle": "Foydali havolalar",
+        "usefulLinksData": [
+            {
+                "title": "OMUC 2.0",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Ticket"
+              },
+              {
+                "title": "ITni o‘rganish uchun kompensatsiya",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Graduated"
+              },
+              {
+                "title": "IT-Skills",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "ShieldDone"
+              },
+              {
+                "title": "IT-Bilim",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Brain"
+              },
+              {
+                "title": "OMUC 2.0",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Ticket"
+              },
+              {
+                "title": "ITni o‘rganish uchun kompensatsiya",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Graduated"
+              }
+        ]
+    },
+    "itUniversities": {
+        "itUniversitiesTitle": "IT Universitetlar",
+        "allUniversities": "Barchasini ko‘rsatish"
+    },
+    "ourPartners": "Bizning hamkorlarimiz"
+}

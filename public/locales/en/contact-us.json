@@ -1,0 +1,10 @@
+{
+    "title": "Have a questions? Contact us",
+    "name": "Full name",
+    "namePlaceholder": "Enter full name",
+    "email": "Email",
+    "emailPlaceholder": "Email address",
+    "message": "How can we help?",
+    "messagePlaceholder": "Enter your message here",
+    "button": "Submit"
+}

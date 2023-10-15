@@ -1,0 +1,15 @@
+{
+    "title": "Frequently asked \n questions",
+    "searchPlaceholder": "Enter your question...",
+    "filters": [
+        "General",
+        "Students",
+        "Residents",
+        "Parners"
+    ],
+    "infoCard": {
+        "title": "Still have questions?",
+        "body": "Feel free to ask any questions, and we'll provide accurate and helpful answers!",
+        "button": "Contact us"
+    }
+}

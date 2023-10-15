@@ -1,0 +1,62 @@
+{
+    "infoCard": {
+        "title": "Кто ты в сфере IT?",
+        "body": "Пройдите этот тест что бы понять какое направление в IT Вам соответствует ",
+        "button": "Пройти тест"
+    },
+    "successfulStories": "Истории успеха",
+    "itCourses": {
+        "itCoursesTitle": "IT-Курсы",
+        "educationCenters": "Учебных центров",
+        "students": "Студентов",
+        "itCoursesGratuates": "Окончивших IT-курсы",
+        "Courses": "IT-курсов",
+        "viewCourses": "Посмотреть курсы"
+    },
+    "usefulLinks": {
+        "usefulLinksTitle": "Полезные ссылки",
+        "usefulLinksData": [
+            {
+                "title": "OMUC 2.0",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Ticket"
+              },
+              {
+                "title": "Компенсация международных IT-сертификатов",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Graduated"
+              },
+              {
+                "title": "IT-Skills",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "ShieldDone"
+              },
+              {
+                "title": "Центр развития IT-знаний IT-Bilim",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Brain"
+              },
+              {
+                "title": "OMUC 2.0",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Ticket"
+              },
+              {
+                "title": "Компенсация международных IT-сертификатов",
+                "description":
+                  "There are over 10,000 professional courses available on the Coursera platform, and completion of these courses",
+                "icon": "Graduated"
+              }
+        ]
+    },
+    "itUniversities": {
+        "itUniversitiesTitle": "IT Университеты",
+        "allUniversities": "Показать все"
+    }, 
+    "ourPartners": "Наши партнеры"
+}

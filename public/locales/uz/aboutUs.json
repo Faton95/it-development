@@ -1,0 +1,13 @@
+{
+    "title": "Biz jismoniy shaxslarga yordam beramiz IT sohasida o'sish",
+    "educationInfo": {
+        "title": "IT ta'lim raqamlarda",
+        "body": "2023-yilda rezident kompaniyalarning o‘quv kurslarini 14300 nafardan ziyod o‘quvchilar muvaffaqiyatli bitirdilar, chiqarilgan  IT-mahsulotlar soni esa 5190 dan ortiqni tashkil etdi. IT Park rezident kompaniyalari 400 dan ortiq IT kurslarini taklif etadilar.",
+        "fullstack": "Frontend, Backend, Fullstack",
+        "itFoundation": "IT asoslari",
+        "design": "Grafik dizayn", 
+        "mobile": "Mobil dasturlash",
+        "robotecnics": "Robototexnika",
+        "other": "Boshqa"
+    }
+}

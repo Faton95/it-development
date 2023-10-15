@@ -1,0 +1,10 @@
+{
+    "title": "Есть вопросы? Свяжитесь с нами",
+    "name": "Полное имя",
+    "namePlaceholder": "Введите полное имя",
+    "email": "E-mail",
+    "emailPlaceholder": "Введите e-mail адрес",
+    "message": "Как мы можем Вам помочь?",
+    "messagePlaceholder": "Введите сообщение здесь",
+    "button": "Подтвердить"
+}

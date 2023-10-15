@@ -1,0 +1,11 @@
+{
+    "title": "Savollaringiz bormi? Biz bilan bog‘laning",
+    "name": "To'liq ism",
+    "namePlaceholder": "To'liq ismingizni kiriting",
+    "nameValidation": "Bu maydon majburiy",
+    "email": "Elektron pochta",
+    "emailPlaceholder": "E-pochta manzili",
+    "message": "Biz qanday yordam bera olamiz?",
+    "messagePlaceholder": "Xabaringizni shu yerga kiriting",
+    "button": "Yuborish"
+}

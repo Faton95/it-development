@@ -1,0 +1,59 @@
+// Blue 
+$light-blue: #E3EEFF;
+$light-blue-50: #F0F3FF;
+$blue: #2675EB;
+$dark-blue: #06306D;
+$grey: #B7B7B7;
+$light-grey: #F8F8F8;
+
+// Base/Black
+$black: #222222;
+
+// White 
+$white: #FFFFFF;
+
+.light-blue {
+    color: $light-blue;
+}
+
+.blue {
+    color: $blue;
+}
+
+.grey {
+    color: $grey;
+    font-weight: 600;
+}
+
+.background-light-blue {
+    background-color: $light-blue;
+}
+
+.background-light-blue-50 {
+    background-color: $light-blue-50;
+}
+
+.background-light-grey {
+    background-color: $light-grey;
+}
+
+.background-white {
+    background-color: $white;
+}
+
+.background-blue {
+    background-color: $blue;
+}
+
+.dark-blue {
+    background-color: $dark-blue;
+}
+
+.black {
+    color: $black;
+}
+
+.white {
+    color: $white;
+}
+

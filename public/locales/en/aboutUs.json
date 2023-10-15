@@ -1,0 +1,14 @@
+{
+    "title": "We help individuals to grow up in IT sphere",
+    "educationInfo": {
+        "title": "IT education in numbers",
+        "body": "In 2023, more than 14,300 students graduated from resident companies, and the number of graduating IT products was more than 5,190. IT Park resident companies offer more than 400 IT courses",
+        "fullstack": "Frontend, Backend, Fullstack",
+        "itFoundation": "IT basics",
+        "design": "Design and artichects", 
+        "mobile": "Mobile development",
+        "robotecnics": "Robotechnics",
+        "other": "Others"
+    }
+
+}

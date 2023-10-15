@@ -1,0 +1,15 @@
+{
+    "title": "Ko'p so'raladigan \n savollar",
+    "searchPlaceholder": "Savolingizni kiriting...",
+    "filters": [
+        "Umumiy",
+        "O'quvchilar",
+        "Rezidentlar",
+        "Hamkorlar"
+    ],
+    "infoCard": {
+        "title": "Hali ham savollaringiz bormi?",
+        "body": "Har qanday savolni bemalol so'rang, biz aniq va foydali javoblarni taqdim etamiz!",
+        "button": "Biz bilan bog'lanish"
+    }
+}

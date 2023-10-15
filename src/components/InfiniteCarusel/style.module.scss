@@ -1,0 +1,90 @@
+.carouselContainer {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    border-color: #4b5563;
+    width: 100%;
+  }
+  
+  .carouselCard {
+    padding: 6.5px;
+    &:hover {
+      transform: scale(0.9);
+    }
+    
+    border-radius: 9px;
+    border: 0.563px solid var(--neutral-colors-300, #EBEFF6);
+    background: var(--neutral-colors-white, #FFF);
+  }
+  
+  .carouselCard > img {
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+  }
+
+  .carouselCardBig {
+    border-radius: 12px;
+    background: var(--light-gray, #F8F8F8);
+    padding: 0 50px;
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+  
+  .carouselCardBig > img {
+    height: 120px;
+    width: 140px;
+    border-radius: 10%;
+  }
+  
+  
+  .carouselTrackLeft {
+    display: flex;
+    position: relative;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    gap: 16px;
+    width: 200%;
+    height: 100%;
+    animation: slideLeft 20s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  .carouselTrackRight {
+    display: flex;
+    position: relative;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    gap: 16px;
+    width: 200%;
+    height: 100%;
+    animation: slideRight 20s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+  }
+
+  @keyframes slideRight {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
