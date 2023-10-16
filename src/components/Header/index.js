@@ -72,11 +72,11 @@ export default function Header() {
   const businessLinks = [
     {
       title: lang[locale].contactUs,
-      link: "/business/contact-us",
+      link: `/${locale}/business/contact-us`,
     },
     {
       title: lang[locale].faq,
-      link: "/business/faq",
+      link: `/${locale}/business/faq`,
     },
   ];
   const isStudent = !router?.pathname?.includes("/business");
@@ -114,7 +114,10 @@ export default function Header() {
       </Navbar>
       <Container>
         <Navbar expand='md' className='p-t-20 p-b-20 gap-5'>
-          <Navbar.Brand className='m-r-80' href={isStudent ? "/" : "/business"}>
+          <Navbar.Brand
+            className='m-r-80'
+            href={isStudent ? `/${locale}` : `/${locale}/business`}
+          >
             <Image
               priority
               src={Logo}

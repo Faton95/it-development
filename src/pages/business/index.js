@@ -6,6 +6,8 @@ import Card from "@/components/Card";
 import Stories from "@/sections/main/Stories";
 import EducationInfo from "@/sections/about-us/EducationInfo";
 import Video from "@/sections/shared/Video";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const residents = {
   0: {
@@ -27,6 +29,10 @@ const residents = {
 };
 
 export default function Business() {
+  const { t: translate } = useTranslation("aboutUs", "common");
+
+  const educationInfo = translate("educationInfo", { returnObjects: true });
+
   return (
     <Layout>
       <Container className='m-t-50 text-center m-b-66'>
@@ -91,9 +97,15 @@ export default function Business() {
           </Col>
         </Row>
       </Container>
-      <Stories />
-      <EducationInfo />
+      <Stories data={translate("successfulStories")} />
+      <EducationInfo educationInfo={educationInfo} />
       <Video />
     </Layout>
   );
 }
+
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["aboutUs", "common"])),
+  },
+});

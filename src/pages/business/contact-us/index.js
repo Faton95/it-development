@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Container, Button, Form } from "react-bootstrap";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Senters() {
+  const { t: translate } = useTranslation("contact-us");
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -11,51 +14,54 @@ export default function Senters() {
       event.preventDefault();
       event.stopPropagation();
     }
-
     setValidated(true);
   };
 
   return (
     <Layout>
       <Container className='m-t-50 text-center d-flex flex-column justify-content-center w-50'>
-        <div className='h-1'>
-          Have a questions? <br />
-          Contact us
-        </div>
+        <div className='h-1'>{translate("title")}</div>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Group
             controlId='validationCustom01'
             className='text-start m-t-80 m-b-40'
           >
-            <Form.Label>Full name</Form.Label>
+            <Form.Label>{translate("name")}</Form.Label>
             <Form.Control
               required
               type='text'
-              placeholder='Enter full name...'
+              placeholder={translate("namePlaceholder")}
             />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group controlId='validationCustom02' className='text-start'>
-            <Form.Label>Email</Form.Label>
-            <Form.Control required type='email' placeholder='Email address' />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Label>{translate("email")}</Form.Label>
+            <Form.Control
+              required
+              type='email'
+              placeholder={translate("emailPlaceholder")}
+            />
           </Form.Group>
           <Form.Group
             controlId='validationCustom02'
             className='text-start m-t-40 m-b-40'
           >
-            <Form.Label>How can we help?</Form.Label>
+            <Form.Label>{translate("message")}</Form.Label>
             <Form.Control
               required
               as='textarea'
               rows={5}
-              placeholder='Enter your message here'
+              placeholder={translate("messagePlaceholder")}
             />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Button type='submit'>Submit</Button>
+          <Button type='submit'>{translate("button")}</Button>
         </Form>
       </Container>
     </Layout>
   );
 }
+
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["contact-us"])),
+  },
+});
