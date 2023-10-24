@@ -40,7 +40,7 @@ const Universities = ({ data }) => {
           {universities.map((item) => (
             <Col key={item.id} md='4' sm='12'>
               <Card>
-                {/* <Card.Img variant='top' src='/images/university.png' />
+                <Card.Img variant='top' src='/images/university.png' />
                 <Card.Body>
                   <Card.Title className='text-start pr-1'>
                     {item.name}
@@ -67,7 +67,7 @@ const Universities = ({ data }) => {
                     {item.faculties.map((item) => (
                       <Hashtags
                         classes='pr-5 background-light-blue-50'
-                        key='item'
+                        key={item}
                       >
                         {item}
                       </Hashtags>
@@ -93,7 +93,7 @@ const Universities = ({ data }) => {
                     height={20}
                     width={20}
                   />
-                </Card.Body> */}
+                </Card.Body>
               </Card>
             </Col>
           ))}

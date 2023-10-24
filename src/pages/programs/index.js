@@ -8,7 +8,6 @@ export default function Programs() {
 
   const usefulLinks = translate("usefulLinks", { returnObjects: true });
 
-  console.log("usefulLinks", usefulLinks);
   return (
     <Layout>
       <UsefulLinks data={usefulLinks} withTitle={false} />

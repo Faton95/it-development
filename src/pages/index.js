@@ -15,6 +15,7 @@ export default function Home() {
   const itCourses = translate("itCourses", { returnObjects: true });
   const usefulLinks = translate("usefulLinks", { returnObjects: true });
   const itUniversities = translate("itUniversities", { returnObjects: true });
+
   return (
     <Layout>
       <Header infoCard={infoCard} />

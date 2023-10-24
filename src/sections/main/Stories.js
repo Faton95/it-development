@@ -61,7 +61,7 @@ const Slider = ({ dataIndex, data, isCenterSlide, slideIndex }) => (
   <Container draggable={false}>
     <Row>
       <Col md='8' sm='12'>
-        <div className='text-start h-3'>{data?.[dataIndex]?.title}</div>
+        <div className='text-start h-3'>{data?.[dataIndex]?.title}123</div>
         <div className='text-start pr-2 m-t-20 m-b-48'>
           A front-end developer creates user interfaces for websites and
           applications <br /> using HTML, CSS, and JavaScript. They collaborate
@@ -92,19 +92,32 @@ const Slider = ({ dataIndex, data, isCenterSlide, slideIndex }) => (
         </Row>
       </Col>
       <Col md='4' sm='12'>
-        <Card>
-          <Card.Img variant='top' src='/images/student.jpg' />
+        <Card className='text-start'>
+          <img
+            src='/images/student.jpg'
+            alt='profile pic'
+            height='232px'
+            width='auto'
+          />
+          <div className='m-t-16 m-l-16 pr-4'>Student</div>
+          <div className='m-t-8 m-l-16 pr-1'>Abror Jurayev</div>
+          <div className='m-t-12 m-l-16 pr-3'>
+            How to Become a Senior Developer During Your Student Years
+          </div>
+          <div className='m-t-20 m-l-16 m-b-16'>
+            <Hashtags classes='m-r-5 pr-5'>Tashkent</Hashtags>
+            <Hashtags classes='m-r-5 pr-5'>FrontEnd</Hashtags>
+          </div>
+          {/* <Card.Img variant='top' src='/images/student.jpg' />
           <Card.Body>
             <Card.Title className='text-start'>Student</Card.Title>
             <Card.Title className='text-start'>Abror Jurayev</Card.Title>
-            <Card.Text className='text-start'>
-              How to Become a Senior Developer During Your Student Years
-            </Card.Text>
+            <Card.Text className='text-start'>How to Become a Senior</Card.Text>
           </Card.Body>
           <Card.Body className='d-flex gap-1'>
             <Hashtags classes='pr-5'>Tashkent</Hashtags>
             <Hashtags classes='pr-5'>FrontEnd</Hashtags>
-          </Card.Body>
+          </Card.Body> */}
         </Card>
       </Col>
     </Row>
