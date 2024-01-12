@@ -13,10 +13,6 @@
   padding: 8px 16px;
 }
 
-Link {
-  text-decoration: none;
-}
-
 .outline-card{
   border-radius: 12px;
   border: 1px solid var(--gray-100, #E0E0E0);
@@ -29,6 +25,12 @@ Link {
 
 .slider {
   gap: 100px;
+}
+
+.universityCard:hover {
+  transition: 0.5s;
+    border: 1px solid #2675EB;
+    box-shadow: 0px 8px 12px 0px rgba(38, 117, 235, 0.25);
 }
 
 
@@ -127,5 +129,4 @@ Link {
 .react-stacked-center-carousel {
   height: 450px !important;
 }
-
 

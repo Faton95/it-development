@@ -5,10 +5,22 @@ import Filter from "@/components/Filter";
 import UsefulLinks from "@/sections/shared/UsefulLinks";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import useSWR from "swr";
+import { fetcher } from "@/api/getAPI";
+import { useRouter } from "next/router";
 
 export default function Senters() {
+  const router = useRouter();
+  const { locale } = router;
+
   const { t: translate } = useTranslation("common");
 
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:1337/api/centers?populate=*&locale=${locale}`,
+    fetcher
+  );
+
+  console.log("centers", data)
   const usefulLinks = translate("usefulLinks", { returnObjects: true });
 
   return (

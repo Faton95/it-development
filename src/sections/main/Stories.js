@@ -8,8 +8,11 @@ import {
   StackedCarousel,
   ResponsiveContainer,
 } from "react-stacked-center-carousel";
+import useSWR from "swr";
+import { fetcher } from "@/api/getAPI";
+import { useRouter } from "next/router";
 
-export const data = [
+export const data1 = [
   {
     title: "AAAAAAAAAA",
   },
@@ -38,7 +41,7 @@ function Pagination(props) {
         marginTop: 20,
       }}
     >
-      {data.map((_, index) => {
+      {props?.amount?.map((_, index) => {
         const isCenterSlide = props.centerSlideDataIndex === index;
         return (
           <div
@@ -61,98 +64,107 @@ const Slider = ({ dataIndex, data, isCenterSlide, slideIndex }) => (
   <Container draggable={false}>
     <Row>
       <Col md='8' sm='12'>
-        <div className='text-start h-3'>{data?.[dataIndex]?.title}123</div>
+        <div className='text-start h-3'>{data[dataIndex].attributes.title}</div>
         <div className='text-start pr-2 m-t-20 m-b-48'>
-          A front-end developer creates user interfaces for websites and
-          applications <br /> using HTML, CSS, and JavaScript. They collaborate
-          with designers and back
-          <br />
-          -end developers to ensure smooth integration and a great user
-          experience.
+          {data[dataIndex].attributes.description}
         </div>
         <Row>
           <Col md='6'>
             <CardLayout classes='p-t-40 p-b-40 background-white'>
               <div className='pr-1'>Average salary</div>
               <div className='h-2 m-t-8 m-b-16'>
-                4,000,000<span className='blue'>+</span>
+                {data[dataIndex].attributes.firstSalary}
+                <span className='blue'>+</span>
               </div>
-              <Hashtags classes='pr-3'>JuniorDeveloper</Hashtags>
+              <Hashtags classes='pr-3'>
+                {data[dataIndex].attributes.firstHashtag}
+              </Hashtags>
             </CardLayout>
           </Col>
           <Col md='6'>
             <CardLayout classes='p-t-40 p-b-40 background-light-blue'>
               <div className='pr-1'>Average salary</div>
               <div className='h-2 m-t-8 m-b-16'>
-                10,000,000<span className='blue'>+</span>
+                {data[dataIndex].attributes.secondSalary}
+                <span className='blue'>+</span>
               </div>
-              <Hashtags classes='pr-3'>MiddleDeveloper</Hashtags>
+              <Hashtags classes='pr-3'>
+                {data[dataIndex].attributes.secondHashtag}
+              </Hashtags>
             </CardLayout>
           </Col>
         </Row>
       </Col>
       <Col md='4' sm='12'>
-        <Card className='text-start'>
-          <img
-            src='/images/student.jpg'
-            alt='profile pic'
-            height='232px'
-            width='auto'
-          />
+        <Card className='text-start min-vh-20 max-vh-20'>
+          <picture>
+            <img
+              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data[dataIndex].attributes.image.data.attributes.url}`}
+              alt='profile pic'
+              width='100%'
+              height='225px'
+              style={{maxHeight: 250}}
+            />
+          </picture>
           <div className='m-t-16 m-l-16 pr-4'>Student</div>
-          <div className='m-t-8 m-l-16 pr-1'>Abror Jurayev</div>
-          <div className='m-t-12 m-l-16 pr-3'>
-            How to Become a Senior Developer During Your Student Years
+          <div className='m-t-8 m-l-16 pr-1'>
+            {data[dataIndex].attributes.studentName}
+          </div>
+          <div className='m-t-12 m-l-16 m-r-16 pr-3'>
+            {data[dataIndex].attributes.studentInfo}
           </div>
           <div className='m-t-20 m-l-16 m-b-16'>
-            <Hashtags classes='m-r-5 pr-5'>Tashkent</Hashtags>
-            <Hashtags classes='m-r-5 pr-5'>FrontEnd</Hashtags>
+            <Hashtags classes='m-r-5 pr-5'>
+              {data[dataIndex].attributes.region}
+            </Hashtags>
           </div>
-          {/* <Card.Img variant='top' src='/images/student.jpg' />
-          <Card.Body>
-            <Card.Title className='text-start'>Student</Card.Title>
-            <Card.Title className='text-start'>Abror Jurayev</Card.Title>
-            <Card.Text className='text-start'>How to Become a Senior</Card.Text>
-          </Card.Body>
-          <Card.Body className='d-flex gap-1'>
-            <Hashtags classes='pr-5'>Tashkent</Hashtags>
-            <Hashtags classes='pr-5'>FrontEnd</Hashtags>
-          </Card.Body> */}
         </Card>
       </Col>
     </Row>
   </Container>
 );
 
-const Stories = ({ data }) => {
+const Stories = ({ title }) => {
+  const router = useRouter();
   const ref = React.useRef();
   const [centerSlideDataIndex, setCenterSlideDataIndex] = React.useState(0);
+
+  const { locale } = router;
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:1337/api/successful-stories?populate=*&locale=${locale}`,
+    fetcher
+  );
+
   const onCenterSlideDataIndexChange = (newIndex) => {
     setCenterSlideDataIndex(newIndex);
   };
   return (
     <div className='background-grey'>
       <Container className='text-center'>
-        <div className='h-2 p-t-40 p-b-40'>{data}</div>
-        <div style={{ width: "100%", position: "relative" }}>
-          <ResponsiveContainer
-            carouselRef={ref}
-            render={(width, carouselRef) => {
-              return (
-                <StackedCarousel
-                  ref={carouselRef}
-                  data={data}
-                  carouselWidth={width}
-                  slideWidth={width}
-                  slideComponent={Slider}
-                  maxVisibleSlide={3}
-                  currentVisibleSlide={1}
-                  onActiveSlideChange={onCenterSlideDataIndexChange}
-                />
-              );
-            }}
-          />
-        </div>
+        <div className='h-2 p-t-40 p-b-40'>{title}</div>
+        {isLoading ? (
+          <div>Loading</div>
+        ) : (
+          <div style={{ width: "100%", position: "relative" }}>
+            <ResponsiveContainer
+              carouselRef={ref}
+              render={(width, carouselRef) => {
+                return (
+                  <StackedCarousel
+                    ref={carouselRef}
+                    data={data?.data}
+                    carouselWidth={width}
+                    slideWidth={width}
+                    slideComponent={Slider}
+                    maxVisibleSlide={1}
+                    currentVisibleSlide={1}
+                    onActiveSlideChange={onCenterSlideDataIndexChange}
+                  />
+                );
+              }}
+            />
+          </div>
+        )}
 
         <Row className='m-t-25 p-b-16'>
           <Col md='8' sm='12' className='text-start'>
@@ -163,7 +175,10 @@ const Stories = ({ data }) => {
             sm='12'
             className='d-flex justify-content-between align-items-center'
           >
-            <Pagination centerSlideDataIndex={centerSlideDataIndex} />
+            <Pagination
+              amount={data?.data}
+              centerSlideDataIndex={centerSlideDataIndex}
+            />
             <div className='d-flex gap-3'>
               <RoundedButton>
                 <Image

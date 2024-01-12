@@ -1,62 +1,31 @@
-import Image from "next/image";
 import { Container } from "react-bootstrap";
+import useSWR from "swr";
+import { fetcher } from "@/api/getAPI";
 
-const Partners = ({ data }) => {
+const Partners = ({ title }) => {
+  const { data, error, isLoading } = useSWR(
+    "http://localhost:1337/api/partners?populate=*",
+    fetcher
+  );
   return (
     <Container>
-      <div className='h-2 text-center m-t-160 m-b-40'>{data}</div>
+      <div className='h-2 text-center m-t-160 m-b-40'>{title}</div>
       <div className='d-flex gap-5 overflow-auto'>
-        <Image
-          src='/images/partner-black.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-blue.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-black.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-blue.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-black.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-blue.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-black.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
-        <Image
-          src='/images/partner-blue.png'
-          alt='partner'
-          height={56}
-          width={202}
-        />
+        {data?.data?.map((item, index) => (
+          <picture key={index}>
+            <img
+              src={
+                process.env.NEXT_PUBLIC_STRAPI_URL +
+                item.attributes.partner?.data[0]?.attributes.url
+              }
+              alt='partner'
+              height={86}
+              width='auto'
+            />
+          </picture>
+        ))}
       </div>
     </Container>
   );
 };
-
 export default Partners;

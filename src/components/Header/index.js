@@ -13,6 +13,7 @@ const lang = {
     aboutUs: "About us",
     contactUs: "Contact us",
     faq: "FAQ",
+    news: "News",
     students: "For students",
     business: "For business",
   },
@@ -23,6 +24,7 @@ const lang = {
     aboutUs: "О нас",
     contactUs: "Связаться с нами",
     faq: "FAQ",
+    news: "Новости",
     students: "Для студентов",
     business: "Для бизнеса",
   },
@@ -33,9 +35,16 @@ const lang = {
     aboutUs: "Biz haqimizda",
     contactUs: "Biz bilan bog'lanish",
     faq: "FAQ",
+    news: "Yangiliklar",
     students: "O'quvchilarga",
     business: "Tadbirkorlarga",
   },
+};
+
+const languageOptions = {
+  uz: "UZ",
+  ru: "RU",
+  en: "EN",
 };
 
 export default function Header() {
@@ -66,6 +75,10 @@ export default function Header() {
     {
       title: lang[locale].faq,
       link: `/${locale}/faq`,
+    },
+    {
+      title: lang[locale].news,
+      link: `/${locale}/news`,
     },
   ];
 
@@ -152,7 +165,7 @@ export default function Header() {
               >
                 {locales.map((locale) => (
                   <option key={locale} value={locale}>
-                    {locale}
+                    {languageOptions[locale]}
                   </option>
                 ))}
               </Form.Select>

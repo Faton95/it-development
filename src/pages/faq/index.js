@@ -5,10 +5,25 @@ import { useState } from "react";
 import InfoCard from "@/sections/shared/InfoCard";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import useSWR from "swr";
+import { fetcher } from "@/api/getAPI";
+import { useRouter } from "next/router";
+
+const types = ["General", "Students", "Partners", "Residents"];
 
 export default function FAQ() {
-  const [filter, setFilter] = useState(0);
+  const router = useRouter();
+  const { locale } = router;
+
+  const [filter, setFilter] = useState("General");
   const { t: translate } = useTranslation("faq");
+
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:1337/api/faqs?populate=*&locale=${locale}`,
+    fetcher
+  );
+
+  const accordionList = data?.data;
 
   const filters = translate("filters", { returnObjects: true });
   const infoCard = translate("infoCard", { returnObjects: true });
@@ -32,15 +47,15 @@ export default function FAQ() {
               key={item}
               type='button'
               className={`btn btn-outline-${
-                filter == index ? "primary" : "secondary"
+                filter == types[index] ? "primary" : "secondary"
               } w-25`}
-              value={index}
+              value={types[index]}
             >
               {item}
             </button>
           ))}
         </div>
-        <AccordionList category={filter} />
+        <AccordionList category={filter} list={accordionList} />
         <InfoCard infoCard={infoCard} />
       </Container>
     </Layout>

@@ -1,8 +1,61 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
+
+const lang = {
+  en: {
+    courses: "Courses",
+    centers: "It Centers",
+    programs: "Programs",
+    aboutUs: "About us",
+    contactUs: "Contact us",
+    faq: "FAQ",
+    students: "For students",
+    business: "For business",
+    socials: "Social media",
+    allRights: "All rights reserved",
+    privacyPolicy: "Privacy Policy",
+    termsAndConditions: "Terms of Service",
+    cookiesSettings: "Cookies Settings",
+  },
+  ru: {
+    courses: "Курсы",
+    centers: "IT центры",
+    programs: "Программы",
+    aboutUs: "О нас",
+    contactUs: "Связаться с нами",
+    faq: "FAQ",
+    students: "Для студентов",
+    business: "Для бизнеса",
+    socials: "Социальные сети",
+    allRights: "Все права защищены",
+    privacyPolicy: "Политика конфиденциальности",
+    termsAndConditions: "Условия использования",
+    cookiesSettings: "Настройки файлов cookie",
+  },
+  uz: {
+    courses: "Kurslar",
+    centers: "IT Markazlar",
+    programs: "Dasturlar",
+    aboutUs: "Biz haqimizda",
+    contactUs: "Biz bilan bog'lanish",
+    faq: "FAQ",
+    students: "O'quvchilarga",
+    business: "Tadbirkorlarga",
+    socials: "Ijtimoiy tarmoqlar",
+    allRights: "Barcha huquqlar himoyalangan",
+    privacyPolicy: "Maxfiylik siyosati",
+    termsAndConditions: "Foydalanish shartlari",
+    cookiesSettings: "Cookie sozlamalari",
+  },
+};
 
 const Index = () => {
+  const router = useRouter();
+  const { locale } = router;
+
   return (
     <div className='dark-blue white m-t-160 p-t-40 p-b-32 pr-3'>
       <Container>
@@ -45,59 +98,68 @@ const Index = () => {
             </div>
           </Col>
           <Col md='3' xs='6'>
-            <div className='grey'>For Students</div>
-            <div className='m-t-20 m-b-12'>Courses</div>
-            <div>Edu Centres</div>
-            <div className='m-t-12 m-b-12'>Programs</div>
-            <div>About us</div>
-            <div className='m-t-12 m-b-12'>Contact us</div>
-            <div>FAQ</div>
+            <div className='grey'>{lang[locale].students}</div>
+            <div className='m-t-20 m-b-12'>
+              <Link href='#' className="text-decoration-none white">{lang[locale].courses}</Link>
+            </div>
+            <div><Link href='#' className="text-decoration-none white">{lang[locale].centers}</Link></div>
+            <div className='m-t-12 m-b-12'><Link href='#' className="text-decoration-none white">{lang[locale].programs}</Link></div>
+            <div><Link href='#' className="text-decoration-none white">{lang[locale].aboutUs}</Link></div>
+            <div className='m-t-12 m-b-12'><Link href='#' className="text-decoration-none white">{lang[locale].contactUs}</Link></div>
+            <div><Link href='#' className="text-decoration-none white">{lang[locale].faq}</Link></div>
           </Col>
           <Col md='3' xs='6'>
-            <div className='grey'>For Business</div>
-            <div className='m-t-20 m-b-12'>Login</div>
-            <div>Contact us</div>
-            <div className='m-t-12'>FAQ</div>
+            <div className='grey'>{lang[locale].business}</div>
+            <div className='m-t-20 m-b-12'><Link href='#' className="text-decoration-none white">{lang[locale].login}</Link></div>
+            <div><Link href='#' className="text-decoration-none white">{lang[locale].contactUs}</Link></div>
+            <div className='m-t-12'><Link href='#' className="text-decoration-none white">{lang[locale].faq}</Link></div>
           </Col>
           <Col md='3' xs='6'>
-            <div className='grey'>Languages</div>
-            <div className='m-t-20 m-b-12'>English</div>
-            <div>Uzbek</div>
-            <div className='m-t-12'>Russian</div>
+            <div className='grey'>{lang[locale].socials}</div>
+            <div className='d-flex gap-2 m-t-20 m-b-12'>
+              <Image
+                src='/icons/Facebook.svg'
+                alt='white-logo'
+                height={24}
+                width={24}
+              />
+              <div>Facebook</div>
+            </div>
+            <div className='d-flex gap-2 m-t-12'>
+              <Image
+                src='/icons/Instagram.svg'
+                alt='white-logo'
+                height={24}
+                width={24}
+              />
+              <div>Instagram</div>
+            </div>
+            <div className='d-flex gap-2 m-t-12'>
+              <Image
+                src='/icons/Twitter.svg'
+                alt='white-logo'
+                height={24}
+                width={24}
+              />
+              <div>Twitter</div>
+            </div>
+            <div className='d-flex gap-2 m-t-12'>
+              <Image
+                src='/icons/LinkedIn.svg'
+                alt='white-logo'
+                height={24}
+                width={24}
+              />
+              <div>LinkedIn</div>
+            </div>
           </Col>
         </Row>
         <Row className='border-top p-t-35'>
-          <Col md='11' className='d-flex gap-4'>
-            <div>© 2023 IT Park. All rights reserved.</div>
-            <div>Privacy Policy</div>
-            <div>Terms of Service</div>
-            <div>Cookies Settings</div>
-          </Col>
-          <Col md='1' className='d-flex gap-3'>
-            <Image
-              src='/icons/Facebook.svg'
-              alt='white-logo'
-              height={24}
-              width={24}
-            />
-            <Image
-              src='/icons/Instagram.svg'
-              alt='white-logo'
-              height={24}
-              width={24}
-            />
-            <Image
-              src='/icons/Twitter.svg'
-              alt='white-logo'
-              height={24}
-              width={24}
-            />
-            <Image
-              src='/icons/LinkedIn.svg'
-              alt='white-logo'
-              height={24}
-              width={24}
-            />
+          <Col md='12' className='d-flex gap-4 flex-wrap'>
+            <div>© 2023 IT Park. {lang[locale].allRights}.</div>
+            <div>{lang[locale].privacyPolicy}</div>
+            <div>{lang[locale].termsAndConditions}</div>
+            <div>{lang[locale].cookiesSettings}</div>
           </Col>
         </Row>
       </Container>

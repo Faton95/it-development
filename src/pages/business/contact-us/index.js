@@ -3,8 +3,16 @@ import Layout from "@/components/Layout";
 import { Container, Button, Form } from "react-bootstrap";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import useSWR from "swr";
+import { fetcher } from "../../../api/getApi";
 
 export default function Senters() {
+  const { data, error, isLoading } = useSWR(
+    "http://localhost:1337/api/courses",
+    fetcher
+  );
+
+  console.log("data", data, error, isLoading);
   const { t: translate } = useTranslation("contact-us");
   const [validated, setValidated] = useState(false);
 

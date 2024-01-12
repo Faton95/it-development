@@ -19,11 +19,11 @@ export default function Home() {
   return (
     <Layout>
       <Header infoCard={infoCard} />
-      <Stories data={translate("successfulStories")} />
+      <Stories title={translate("successfulStories")} />
       <Courses itCourses={itCourses} />
       <UsefulLinks data={usefulLinks} />
       <Universities data={itUniversities} />
-      <Partners data={translate("ourPartners")} />
+      <Partners title={translate("ourPartners")} />
     </Layout>
   );
 }

@@ -2,6 +2,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Hashtags from "@/components/Hashtags";
 import Image from "next/image";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 const universities = [
   {
@@ -36,10 +37,10 @@ const Universities = ({ data }) => {
         <div className='h-2 text-center m-t-45 m-b-32'>
           {data.itUniversitiesTitle}
         </div>
-        <Row>
+        <Row className='gy-3'>
           {universities.map((item) => (
             <Col key={item.id} md='4' sm='12'>
-              <Card>
+              <Card className='universityCard'>
                 <Card.Img variant='top' src='/images/university.png' />
                 <Card.Body>
                   <Card.Title className='text-start pr-1'>
@@ -98,7 +99,8 @@ const Universities = ({ data }) => {
             </Col>
           ))}
         </Row>
-        <Button classes='m-t-50'>{data.allUniversities}</Button>
+        
+          <Link href='/centers'><Button classes='m-t-50'>{data.allUniversities}</Button></Link>
       </Container>
     </div>
   );

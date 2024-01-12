@@ -8,7 +8,7 @@ export const Slide = React.memo(function MyComponent(
   const { data, dataIndex, isCenterSlide, swipeTo, slideIndex } =
     StackedCarouselSlideProps;
 
-  const coverImage = data[dataIndex].image;
+  const coverImage = data[dataIndex]?.image;
 
   return (
     <div className='card-card' draggable={false}>
@@ -22,13 +22,15 @@ export const Slide = React.memo(function MyComponent(
       </div>
       <div className='detail fill'>
         <div className='discription'>
-          <Image
-            alt='image'
-            src={`/images/${coverImage}`}
-            width={350}
-            height={350}
-            style={{ borderRadius: 20 }}
-          />
+          <picture>
+            <img
+              alt='image'
+              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${coverImage}`}
+              width={350}
+              height={350}
+              style={{ borderRadius: 20 }}
+            />
+          </picture>
         </div>
       </div>
     </div>
