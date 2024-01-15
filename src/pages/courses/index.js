@@ -6,10 +6,22 @@ import UsefulLinks from "@/sections/shared/UsefulLinks";
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import useSWR from "swr";
+import { fetcher } from "@/api/getAPI";
+import { useRouter } from "next/router";
 
 export default function Courses() {
   const [courses, setCourses] = useState([]);
 
+  const router = useRouter();
+  const { locale } = router;
+
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:1337/api/courses?populate=*&locale=${locale}`,
+    fetcher
+  );
+
+  console.log("data", data?.data);
   const { t: translate } = useTranslation("common");
 
   const usefulLinks = translate("usefulLinks", { returnObjects: true });
@@ -35,7 +47,7 @@ export default function Courses() {
             <Filter />
           </Col> */}
           <Col md='12'>
-            <CourseCardList courses={courses} />
+            <CourseCardList courses={data} />
           </Col>
         </Row>
         <UsefulLinks data={usefulLinks} />

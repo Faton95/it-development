@@ -20,7 +20,7 @@ export default function Senters() {
     fetcher
   );
 
-  console.log("centers", data)
+  
   const usefulLinks = translate("usefulLinks", { returnObjects: true });
 
   return (

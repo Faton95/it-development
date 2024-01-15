@@ -2,6 +2,7 @@ import CourseCardItem from "./CourseCardItem";
 import { Row, Col, Form } from "react-bootstrap";
 
 const CourseCardList = ({ courses }) => {
+
   return (
     <>
       <Row className='gy-4'>

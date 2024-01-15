@@ -3,10 +3,21 @@ import Image from "next/image";
 import styles from "./style.module.scss";
 
 const CourseCardItem = ({ data }) => {
+  console.log("sss", data)
+  const image = data?.course_image?.data?.attributes?.url
+
+
   return (
     <div className={styles.rootCard}>
       <div className={styles.imageContainer}>
-        <Image src='/images/pdp.jpg' fill className='image' alt='card item' />
+        <picture>
+                  <img
+                      alt='image'
+                      src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image}`}
+                      height='200'
+                      width='305'
+                  />
+          </picture>
       </div>
       <div className={styles.info}>
         <div className='pr-4'>| {data?.it_center}</div>
