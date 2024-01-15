@@ -4,7 +4,7 @@ import { Container, Button, Form } from "react-bootstrap";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export default function Senters() {
+export default function ContactUS() {
   const { t: translate } = useTranslation("contact-us");
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');

@@ -3,27 +3,40 @@ import Layout from "@/components/Layout";
 import { Container, Button, Form } from "react-bootstrap";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import useSWR from "swr";
-import { fetcher } from "../../../api/getApi";
 
-export default function Senters() {
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:1337/api/courses",
-    fetcher
-  );
-
-  console.log("data", data, error, isLoading);
+export default function ContactUS() {
   const { t: translate } = useTranslation("contact-us");
+  const [fullname, setFullname] = useState('');
+  const [email, setEmail] = useState('');
+  const [description, setDescription] = useState('');
+
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
+  async function handleSubmit(event) {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    const body = {
+      full_name: fullname,
+      body: description,
+      email,
+    }
+
+    if (form.checkValidity() !== false) {
       event.preventDefault();
       event.stopPropagation();
+      const response = await fetch("http://localhost:1337/api/contact-uses", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({data: body}),
+      });
+      const data = await response.json();
+      setValidated(true);
     }
+
+    event.preventDefault();
     setValidated(true);
-  };
+  }
 
   return (
     <Layout>
@@ -36,17 +49,21 @@ export default function Senters() {
           >
             <Form.Label>{translate("name")}</Form.Label>
             <Form.Control
+              name='full_name'
               required
               type='text'
               placeholder={translate("namePlaceholder")}
+              onChange={(event) => setFullname(event.target.value)}
             />
           </Form.Group>
           <Form.Group controlId='validationCustom02' className='text-start'>
             <Form.Label>{translate("email")}</Form.Label>
             <Form.Control
+              name='email'
               required
               type='email'
               placeholder={translate("emailPlaceholder")}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </Form.Group>
           <Form.Group
@@ -55,10 +72,12 @@ export default function Senters() {
           >
             <Form.Label>{translate("message")}</Form.Label>
             <Form.Control
+              name='body'
               required
               as='textarea'
               rows={5}
               placeholder={translate("messagePlaceholder")}
+              onChange={(event) => setDescription(event.target.value)}
             />
           </Form.Group>
           <Button type='submit'>{translate("button")}</Button>
