@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 const UsefulLinks = ({ withTitle = true }) => {
   const router = useRouter();
   const { locale } = router;
+  
   const { data, error, isLoading } = useSWR(
     `http://localhost:1337/api/useful-links?populate=*&locale=${locale}`,
     fetcher
