@@ -1,0 +1,20 @@
+.root {
+    border-radius: 8px;
+    border: 1px solid var(--gray-100, #E0E0E0);
+    background: var(--white, #FFF);
+    padding: 16px;
+}
+
+.filterAmount {
+    border-radius: 50px;
+    background: var(--gray-100, #E0E0E0);
+    padding: 7px 5.5px;
+}
+
+.filterButton {
+    border-radius: 6px;
+    border: 1px solid var(--primary-blue, #2675EB);
+    background-color: transparent;
+    width: 100%;
+    padding: 8px;
+}

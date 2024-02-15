@@ -9,7 +9,7 @@ export const Slide = React.memo(function MyComponent(
     StackedCarouselSlideProps;
 
   const coverImage = data[dataIndex]?.image;
-
+  
   return (
     <div className='card-card' draggable={false}>
       <div className={`cover fill ${isCenterSlide ? "off" : "on"}`}>
@@ -20,6 +20,7 @@ export const Slide = React.memo(function MyComponent(
           }}
         />
       </div>
+      <a href={isCenterSlide ? `http://localhost:3000/en/courses?course=react` : ''}>
       <div className='detail fill'>
         <div className='discription'>
           <picture>
@@ -33,6 +34,7 @@ export const Slide = React.memo(function MyComponent(
           </picture>
         </div>
       </div>
+      </a>
     </div>
   );
 });
